@@ -1,0 +1,5 @@
+package com.exam.quiz_service.bean;
+
+public class QuizBean {
+
+}

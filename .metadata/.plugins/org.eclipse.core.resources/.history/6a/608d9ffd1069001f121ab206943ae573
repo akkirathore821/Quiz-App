@@ -1,0 +1,17 @@
+package com.exam.quiz.service;
+
+import java.util.List;
+
+import org.springframework.http.ResponseEntity;
+
+import com.exam.quiz.bean.QuestionBean;
+
+public interface QuestionService {
+
+	ResponseEntity<List<QuestionBean>> getAllQuestions();
+
+	ResponseEntity<QuestionBean> addQuestion(QuestionBean bean);
+
+	ResponseEntity<List<QuestionBean>> getByCategory(String category);
+
+}

@@ -1,0 +1,13 @@
+package com.exam.quiz_server_service;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class QuizServerServiceApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(QuizServerServiceApplication.class, args);
+	}
+
+}

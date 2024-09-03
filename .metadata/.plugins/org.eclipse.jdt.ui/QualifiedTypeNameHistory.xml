@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="jakarta.persistence.ElementCollection"/>
+    <fullyQualifiedTypeName name="com.exam.quiz_service.feign.QuizFeignInteface"/>
+    <fullyQualifiedTypeName name="com.exam.question_service.bean.QuestionBean"/>
+    <fullyQualifiedTypeName name="org.springframework.beans.BeanUtils"/>
+    <fullyQualifiedTypeName name="com.exam.question_service.bean.ResponseBean"/>
+    <fullyQualifiedTypeName name="org.springframework.cloud.openfeign.FeignClient"/>
+    <fullyQualifiedTypeName name="org.springframework.cloud.netflix.eureka.server.EnableEurekaServer"/>
+</qualifiedTypeNameHistroy>

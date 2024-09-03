@@ -1,0 +1,73 @@
+package com.exam.quiz.dao;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import com.exam.quiz.bean.QuestionBean;
+import com.exam.quiz.entity.QuestionEntity;
+
+@Repository
+public class QuestionDAOWrapper {
+	
+	@Autowired
+	QuestionDAO dao;
+	
+	public List<QuestionBean> getAllQuestions() {
+
+		List<QuestionEntity> list = dao.findAll();
+		List<QuestionBean> bean = new ArrayList<>();
+		
+		for(QuestionEntity entity : list) {
+			QuestionBean b = new QuestionBean();
+			BeanUtils.copyProperties(entity, b);
+			bean.add(b);
+		}
+		return bean;
+
+	}
+	
+	public List<QuestionBean> getByCategory(String category) {
+
+		List<QuestionEntity> list = dao.findByCategory(category);
+		List<QuestionBean> bean = new ArrayList<>();
+		
+		for(QuestionEntity entity : list) {
+			QuestionBean b = new QuestionBean();
+			BeanUtils.copyProperties(entity, b);
+			bean.add(b);
+		}
+		return bean;
+	}
+	
+	public QuestionBean addQuestion(QuestionBean bean) {
+
+		QuestionEntity entity = new QuestionEntity();
+		BeanUtils.copyProperties(bean, entity);
+
+		entity = dao.save(entity);
+		
+		BeanUtils.copyProperties(entity, bean);
+			
+		return bean;
+	}
+
+	public List<QuestionBean> getRandomQuestionForQuizByCategory(String category) {
+
+		List<QuestionEntity> list = dao.findRandomQuestionForQuizByCategory(category);
+		List<QuestionBean> bean = new ArrayList<>();
+		
+		for(QuestionEntity entity : list) {
+			QuestionBean b = new QuestionBean();
+			BeanUtils.copyProperties(entity, b);
+			bean.add(b);
+		}
+		return bean;
+	}
+
+	
+
+}
